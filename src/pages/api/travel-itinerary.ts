@@ -1,9 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Configuration, OpenAIApi } from "openai";
 import { env } from "../../env.mjs";
-
-// `env` is fully typesafe and provides autocompletion
-const dbUrl = env.DATABASE_URL;
  interface TravelItinerary {
   place: string
   numberOfDays: number
