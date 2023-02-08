@@ -13,7 +13,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const prompt = `Generate a travel itinerary for ${numberOfDays} days travel in ${place} with ${numberOfPeople} people`
 
     const configuration = new Configuration({
-      apiKey: env.OPEN_API_KEY as string,
+      apiKey: env.OPEN_API_KEY as unknown as string,
     });
 
     const openai = new OpenAIApi(configuration);
