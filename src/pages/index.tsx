@@ -9,6 +9,7 @@ const Home: NextPage = () => {
   async function handleOnSubmit(event: React.SyntheticEvent): Promise<void> {
     event.preventDefault()
 
+    setGeneratedText('')
     setIsLoading(true)
 
     const target = event.target as typeof event.target & {
