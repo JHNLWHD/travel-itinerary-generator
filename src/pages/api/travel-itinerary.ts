@@ -22,7 +22,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       model: "text-davinci-003",
       prompt,
       temperature: 0.7,
-      max_tokens: 4000,
+      max_tokens: 2048,
     });
 
     res.status(response.status).json(response.data)
