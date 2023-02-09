@@ -49,14 +49,17 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 pt-12 ">
+        <div className="container flex flex-col items-center justify-center gap-6 px-4 pt-12 ">
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem] text-center">
             Travel <span className="text-[hsl(280,100%,70%)]">Itinerary Generator</span>
           </h1>
+          <h2 className="text-sm font-extrabold tracking-tight text-white text-center">
+            Note: Number of days is now limited to maximum of 7 days only, still working on it to cater more days soon
+          </h2>
           <form className="grid grid-cols-1 gap-4 sm:grid-cols-4 md:gap-8" onSubmit={handleOnSubmit}>
             <div className="mb-6">
               <label htmlFor="numberOfDays" className="block mb-2 text-sm font-medium text-white">Number of days</label>
-              <input type="number" id="numberOfDays"
+              <input type="number" id="numberOfDays" min={1} max={7}
                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
             </div>
 
@@ -68,7 +71,7 @@ const Home: NextPage = () => {
 
             <div className="mb-6">
               <label htmlFor="numberOfPeople" className="block mb-2 text-sm font-medium text-white">Number of people</label>
-              <input type="number" id="numberOfPeople"
+              <input type="number" id="numberOfPeople" min={1}
                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
             </div>
 
